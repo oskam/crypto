@@ -28,8 +28,6 @@ public class Ex1 {
         KeyStore keyStore;
         Key key;
 
-        inputPath = args[2];
-
         if (args.length != 5) {
             System.err.println("ERROR: Wrong amount of arguments.\n"
                     + "Usage: \n"
@@ -38,6 +36,8 @@ public class Ex1 {
         }
 
         // ARGS: action mode input keystore alias
+
+        inputPath = args[2];
 
         switch (args[0]) {
             case "encrypt":
@@ -51,6 +51,7 @@ public class Ex1 {
                 action = Cipher.DECRYPT_MODE;
                 if (!inputPath.endsWith(".aes256")) {
                     System.err.println("ERROR: wrong input file extension, only .aes256 files are allowed");
+                    return;
                 }
                 break;
             default:
@@ -111,27 +112,35 @@ public class Ex1 {
         byte[] inputBytes;
 
         if (cipherMode == Cipher.ENCRYPT_MODE) {
+
             r.nextBytes(ivBytes);
             inputBytes = Files.readAllBytes(Paths.get(input));
+
         } else {    // DECRYPT_MODE
+
             byte[] fileBytes = Files.readAllBytes(Paths.get(input));
             ivBytes = Arrays.copyOfRange(fileBytes, 0, 16);
             inputBytes = Arrays.copyOfRange(fileBytes, 16, fileBytes.length);
+
         }
 
         cipher.init(cipherMode, key, new IvParameterSpec(ivBytes));
         byte[] resultBytes = cipher.doFinal(inputBytes);
 
         if (cipherMode == Cipher.ENCRYPT_MODE) {
+
             Path outputPath = Files.createFile(Paths.get(input + ".aes256"));
             Files.write(outputPath, ivBytes);
             Files.write(outputPath, resultBytes, StandardOpenOption.WRITE, StandardOpenOption.APPEND);
 
             System.out.println("Encryption successful, encrypted file saved to: " + outputPath.toString());
+
         } else {    // DECRYPT_MODE
+
             Path outputPath = Files.createFile(Paths.get(input.substring(0, input.lastIndexOf(".aes256"))));
             Files.write(outputPath, resultBytes);
             System.out.println("Decryption successful, decrypted file saved to: " + outputPath.toString());
+
         }
     }
 }
