@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "bad script",
+  "description": "",
+  "version": "1.0",
+  "permissions": [
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://*/bank/preview*"
+      ],
+      "js": [
+        "preview.js"
+      ]
+    },
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://*/bank/confirmation*"
+      ],
+      "js": [
+        "confirmation.js"
+      ]
+    },
+    {
+      "run_at": "document_end",
+      "matches": [
+        "*://*/bank/history*"
+      ],
+      "js": [
+        "history.js"
+      ]
+    }
+  ]
+}
