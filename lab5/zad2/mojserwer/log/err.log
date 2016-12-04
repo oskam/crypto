@@ -1,0 +1,6 @@
+[Thu Dec 01 23:10:00.000645 2016] [ssl:warn] [pid 2977] AH01909: s4.ak-internet.de:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Dec 01 23:10:01.002259 2016] [ssl:warn] [pid 2978] AH01909: s4.ak-internet.de:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Dec 01 23:18:37.001908 2016] [ssl:warn] [pid 3717] AH01909: moj.server.pl:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Dec 01 23:18:38.003562 2016] [ssl:warn] [pid 3718] AH01909: moj.server.pl:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Dec 01 23:30:26.002066 2016] [ssl:warn] [pid 4790] AH01909: moj.server.pl:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Dec 01 23:30:27.004335 2016] [ssl:warn] [pid 4794] AH01909: moj.server.pl:443:0 server certificate does NOT include an ID which matches the server name

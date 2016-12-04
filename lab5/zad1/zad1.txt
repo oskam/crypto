@@ -1,0 +1,50 @@
+magdalena@magdalena-VirtualBox:/etc/ssl$ sudo openssl genrsa -out privkeyA.pem 3072
+Generating RSA private key, 3072 bit long modulus
+.....................................................................................................................++
+...........................................++
+e is 65537 (0x10001)
+magdalena@magdalena-VirtualBox:/etc/ssl$ sudo openssl req -new -key privkeyA.pem -out certA.csr
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:PL
+State or Province Name (full name) [Some-State]:Dolnoslaskie
+Locality Name (eg, city) []:Wroclaw
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:PWr 
+Organizational Unit Name (eg, section) []:Me
+Common Name (e.g. server FQDN or YOUR name) []:moj.serwer.pl
+Email Address []:221492@student.pwr.edu.pl
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+magdalena@magdalena-VirtualBox:/etc/ssl$ sudo openssl genrsa -out privkeyB.pem 3072
+Generating RSA private key, 3072 bit long modulus
+....++
+...............................................................................++
+e is 65537 (0x10001)
+magdalena@magdalena-VirtualBox:/etc/ssl$ sudo openssl req -new -x509 -key privkeyB.pem -out CAcert.crt -days 15
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:PL
+State or Province Name (full name) [Some-State]:Dolnoslaskie
+Locality Name (eg, city) []:Wroclaw
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:PWr
+Organizational Unit Name (eg, section) []:Me
+Common Name (e.g. server FQDN or YOUR name) []:moj.serwer.pl
+Email Address []:221492@student.pwr.edu.pl
+magdalena@magdalena-VirtualBox:/etc/ssl$ sudo openssl x509 -req -days 45 -in certA.csr -CA CAcert.crt -CAkey privkeyB.pem -set_serial 01 -out certA.crt
+Signature ok
+subject=/C=PL/ST=Dolnoslaskie/L=Wroclaw/O=PWr/OU=Me/CN=moj.serwer.pl/emailAddress=221492@student.pwr.edu.pl
+Getting CA Private Key
+
