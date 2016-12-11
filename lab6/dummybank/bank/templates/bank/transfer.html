@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="get" action="/bank/preview/">
+    {{ form.as_p }}
+    <input type="submit" value="preview" />
+</form>
+{% endblock %}

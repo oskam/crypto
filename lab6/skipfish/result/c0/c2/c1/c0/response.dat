@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Thu, 08 Dec 2016 20:13:47 GMT
+Server: WSGIServer/0.2 CPython/3.5.2
+Last-Modified: Thu, 08 Dec 2016 17:08:02 GMT
+Content-Length: 0
+Content-Type: text/css; charset="utf-8"
+Cache-Control: public, max-age=60
+Access-Control-Allow-Origin: *
+

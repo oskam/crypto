@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="history">
+    <section>
+        {% for t in transfers %}
+
+        <hr>
+
+        <article>
+            <table style="width:80%">
+                <tr>
+                    <th>Receiver:</th>
+                    <td>Account number: {{ t.acc_num_to }}</td>
+                    <td>Name: {{ t.rec_name|safe }}</td>
+                </tr>
+                <tr>
+                    <th>Amount:</th>
+                    <td>{{t.amount}}</td>
+                </tr>
+                <tr>
+                    <th>Adress:</th>
+                    <td>{{ t.rec_street }}</td>
+                    <td>{{ t.rec_pcode }}, {{ t.rec_city }}</td>
+                </tr>
+                <tr>
+                    <th>Date:</th>
+                    <td>{{ t.post_time }}</td>
+                </tr>
+                <tr>
+                    <th>Transer approved:</th>
+                    <td>{{t.approved}}</td>
+                </tr>
+            </table>
+        </article>
+        {% endfor %}
+    </section>
+</div>
+{% endblock %}

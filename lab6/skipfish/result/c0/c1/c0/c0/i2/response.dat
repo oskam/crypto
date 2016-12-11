@@ -1,0 +1,10 @@
+HTTP/1.1 302 Found
+Date: Thu, 08 Dec 2016 19:34:28 GMT
+Server: WSGIServer/0.2 CPython/3.5.2
+Cache-Control: no-cache, max-age=0, no-store, must-revalidate
+Last-Modified: Thu, 08 Dec 2016 19:34:28 GMT
+Content-Type: text/html; charset=utf-8
+Location: /admin/login/?next=/admin/auth/group/sfi9876/
+Vary: Cookie
+X-Frame-Options: SAMEORIGIN
+Expires: Thu, 08 Dec 2016 19:34:28 GMT

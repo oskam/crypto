@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Date: Thu, 08 Dec 2016 20:13:46 GMT
+Server: WSGIServer/0.2 CPython/3.5.2
+Cache-Control: no-cache, max-age=0, no-store, must-revalidate
+Last-Modified: Thu, 08 Dec 2016 20:13:46 GMT
+Content-Type: text/html; charset=utf-8
+Vary: Cookie
+X-Frame-Options: SAMEORIGIN
+Expires: Thu, 08 Dec 2016 20:13:46 GMT
+Set-Cookie: csrftoken=UlH14nHSstB642UlNEdfAEEl5LETAiF8BwwNOw0ucv4ReOL1fyT1674bjgcvqdxX; expires=Thu, 07-Dec-2017 20:13:46 GMT; Max-Age=31449600; Path=/
+
+
+<html>
+
+<head>
+    <title>Dummy Bank</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                 
+
+                <form method="post" action="/login/"

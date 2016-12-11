@@ -1,0 +1,1 @@
+skipfish -A skipfish:skokryba -S /usr/share/skipfish/dictionaries/complete.wl -W ./dummybank.wl -o ./result http://127.0.0.1:8000/bank/
